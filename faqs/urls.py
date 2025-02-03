@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import FAQListCreateView
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path("faqs/", FAQListCreateView.as_view(), name="faq-list-create"),
+    path("admin/", admin.site.urls),
+    path("api/", include("faqs.urls")),
 ]
